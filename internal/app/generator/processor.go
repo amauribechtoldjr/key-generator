@@ -9,6 +9,7 @@ import (
 
 const CHAR_CODE_SIGNAL string = "{@}"
 const YEAR_CODE_SIGNAL string = "{yy}"
+const FULL_YEAR_CODE_SIGNAL string = "{YY}"
 
 func processChar(key *string) {
 	if !isValidSignal(key, CHAR_CODE_SIGNAL) {
@@ -25,13 +26,14 @@ func processChar(key *string) {
 }
 
 func processYear(key *string) {
-	if !isValidSignal(key, YEAR_CODE_SIGNAL) {
+	if !isValidSignal(key, FULL_YEAR_CODE_SIGNAL) && !isValidSignal(key, YEAR_CODE_SIGNAL) {
 		return 
 	}
 
-	year := strconv.Itoa(time.Now().Year()) 
+	fullYear := strconv.Itoa(time.Now().Year())
 
-	*key = strings.ReplaceAll(*key, YEAR_CODE_SIGNAL, year)
+	*key = strings.ReplaceAll(*key, FULL_YEAR_CODE_SIGNAL, fullYear)
+	*key = strings.ReplaceAll(*key, YEAR_CODE_SIGNAL, fullYear[0:2])
 }
 
 func isValidSignal(key *string, signal string) bool {
