@@ -1,4 +1,4 @@
-package generator
+package keygenerator
 
 import (
 	"math/rand/v2"
@@ -7,9 +7,11 @@ import (
 	"time"
 )
 
-const CHAR_CODE_SIGNAL string = "{@}"
-const YEAR_CODE_SIGNAL string = "{yy}"
-const FULL_YEAR_CODE_SIGNAL string = "{YY}"
+const (
+	CHAR_CODE_SIGNAL string = "{@}"
+ 	YEAR_CODE_SIGNAL string = "{yy}"
+ 	FULL_YEAR_CODE_SIGNAL string = "{YY}"
+)
 
 func processChar(key *string) {
 	if !isValidSignal(key, CHAR_CODE_SIGNAL) {
