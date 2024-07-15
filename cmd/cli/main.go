@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/amauribechtoldjr/key-generator/pkg/keygenerator"
+	"github.com/amauribechtoldjr/key-generator/pkg/keygen"
 )
 
 func main() {
-	flags := keygenerator.Setup()
+	flags := keygen.Setup()
 
-	fmt.Println(keygenerator.GenerateKey(flags)) 
+	fmt.Println(keygen.GenerateKey(flags)) 
 }
