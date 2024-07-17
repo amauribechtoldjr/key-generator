@@ -7,7 +7,7 @@ import (
 	"github.com/amauribechtoldjr/key-generator/pkg/keygen/processors/charprocessor"
 )
 
-func TestExecuteCharProcessor(c *testing.T) {
+func TestSingleChar(c *testing.T) {
 	isValid := regexp.MustCompile(`test(@|!|\$|%|&|#)`)
 
 	pc := charprocessor.New("!", "@", "$", "%", "&", "#")
@@ -19,7 +19,7 @@ func TestExecuteCharProcessor(c *testing.T) {
 	}
 }
 
-func TestExecuteMultipleCharProcessor(c *testing.T) {
+func TestMultipleChar(c *testing.T) {
 	isValid := regexp.MustCompile(`test(@|!|\$|%|&|#)test(@|!|\$|%|&|#)`)
 
 	pc := charprocessor.New("!", "@", "$", "%", "&", "#")
