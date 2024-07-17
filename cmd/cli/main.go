@@ -7,9 +7,7 @@ import (
 )
 
 func main() {
-	flags := keygen.Setup()
+	flags := Setup()
 
-
-	// TODO: this generateKey can be refactored, maybe directly remove it.
-	fmt.Println(keygen.GenerateKey(flags)) 
+	fmt.Println(keygen.ProcessKeyString(flags.Ks))
 }

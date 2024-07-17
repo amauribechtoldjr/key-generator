@@ -1,4 +1,4 @@
-package keygen
+package main
 
 import (
 	"errors"
@@ -59,7 +59,6 @@ func WithValidKS() SetOptionFn {
 	}
 }
 
-// TODO: add different setup to API and CLI
 func Setup() *KeyGeneratorFlags {
 	const usage = "Your key string generator"
 
